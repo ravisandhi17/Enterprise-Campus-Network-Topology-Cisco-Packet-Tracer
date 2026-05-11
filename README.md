@@ -83,6 +83,11 @@ R2 ↔ R3	10.10.30.0/24
 
 R1 ↔ R3	10.10.20.0/24
 
+![IP_INT_BR_DIST_R2](topology/IP_INT_BR_DIST_R2.png)
+
+![IP_INT_BR_DIST_R3](topology/IP_INT_BR_DIST_R3.png)
+
+
 ⚙️ **Key Technologies Implemented**
 
 VLAN Segmentation
@@ -176,7 +181,12 @@ router ospf 1
 
  ![RUNNING_CONFIG_DIST_R2_OSPF](ospf/RUNNING_CONFIG_DIST_R2_OSPF.png)
 
+  ![IP_ROUTE_DIST_R2](ospf/IP_ROUTE_DIST_R2.png)
+
  ![RUNNING_CONFIG_DIST_R3_OSPF](ospf/RUNNING_CONFIG_DIST_R3_OSPF.png)
+
+  ![IP_ROUTE_DIST_R3](ospf/IP_ROUTE_DIST_R3.png)
+
 
 
 🔍 **Verification Commands**
