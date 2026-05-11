@@ -231,9 +231,9 @@ HSRP maintained gateway availability using virtual IP addresses. Active and stan
 
 Command used: ping 192.168.x.x
 
-  ![PING1](hsrp/PING1.png)
+  ![PING1](ping/PING1.png)
   
-  ![PING2](hsrp/PING2.png)
+  ![PING2](ping/PING2.png)
 
 
 🧠 **Skills Demonstrated**
