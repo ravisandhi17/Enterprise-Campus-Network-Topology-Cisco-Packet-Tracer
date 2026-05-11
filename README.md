@@ -10,7 +10,7 @@ The design focuses on high availability, fault tolerance, scalability, and redun
 
 The network is designed using a three-router core layer with multiple VLAN-enabled access networks.
 
-![TOPOLOGY](screenshots/topology/TOPOLOGY.png)
+![TOPOLOGY](topology/TOPOLOGY.png)
 
 🔹 **Core Devices**
 
@@ -56,21 +56,21 @@ ACCOUNTING	VLAN 50	192.168.50.0/24
 
 FINANCE	VLAN 60	192.168.60.0/24
 
-![VLANS_SW_CORE_1](screenshots/vlan/VLANS_SW_CORE_1.png)
+![VLANS_SW_CORE_1](vlan/VLANS_SW_CORE_1.png)
 
-![VLANS_SW_CORE_2](screenshots/vlan/VLANS_SW_CORE_2.png)
+![VLANS_SW_CORE_2](vlan/VLANS_SW_CORE_2.png)
 
-![VLAN10_SW_MGMT](screenshots/vlan/VLAN10_SW_MGMT.png)
+![VLAN10_SW_MGMT](vlan/VLAN10_SW_MGMT.png)
 
-![VLAN20_SW_ENGG](screenshots/vlan/VLAN20_SW_ENGG.png)
+![VLAN20_SW_ENGG](vlan/VLAN20_SW_ENGG.png)
 
-![VLAN30_SW_HR](screenshots/vlan/VLAN30_SW_HR.png)
+![VLAN30_SW_HR](vlan/VLAN30_SW_HR.png)
 
-![VLAN40_SW_SALES](screenshots/vlan/VLAN40_SW_SALES.png)
+![VLAN40_SW_SALES](vlan/VLAN40_SW_SALES.png)
 
-![VLAN50_SW_ACCOUNTING](screenshots/vlan/VLAN50_SW_ACCOUNTING.png)
+![VLAN50_SW_ACCOUNTING](vlan/VLAN50_SW_ACCOUNTING.png)
 
-![VLAN60_SW_FINANCE](screenshots/vlan/VLAN60_SW_FINANCE.png)
+![VLAN60_SW_FINANCE](vlan/VLAN60_SW_FINANCE.png)
 
 
 🔁 **IP Addressing (Router Links)**
@@ -121,9 +121,9 @@ Load Balancing Strategy:
 
 Active gateways are distributed between Dist-R2 and Dist-R3.
 
-![HSRP](screenshots/hsrp/STANDBY_BRIEF_DIST_R2.png)
+![HSRP](hsrp/STANDBY_BRIEF_DIST_R2.png)
 
-![HSRP](screenshots/hsrp/STANDBY_BRIEF_DIST_R3.png)
+![HSRP](hsrp/STANDBY_BRIEF_DIST_R3.png)
 
 📡 **OSPF Routing**
 
@@ -155,13 +155,13 @@ interface GigabitEthernet0/0.10
  
  standby 10 ip 192.168.10.254
 
-  ![INTERFACE_TRUNK_SW_CORE_1](screenshots/trunking/INTERFACE_TRUNK_SW_CORE_1.png)
+  ![INTERFACE_TRUNK_SW_CORE_1](trunking/INTERFACE_TRUNK_SW_CORE_1.png)
 
-  ![ROAS_DIST_R2](screenshots/trunking/ROAS_DIST_R2.png)
+  ![ROAS_DIST_R2](trunking/ROAS_DIST_R2.png)
 
-  ![INTERFACE_TRUNK_SW_CORE_2](screenshots/trunking/INTERFACE_TRUNK_SW_CORE_2.png)
+  ![INTERFACE_TRUNK_SW_CORE_2](trunking/INTERFACE_TRUNK_SW_CORE_2.png)
 
-  ![ROAS_DIST_R3](screenshots/trunking/ROAS_DIST_R3.png)
+  ![ROAS_DIST_R3](trunking/ROAS_DIST_R3.png)
 
 
 **OSPF Configuration**
@@ -174,12 +174,12 @@ router ospf 1
  
  network 10.10.30.0 0.0.0.255 area 0
 
- ![RUNNING_CONFIG_DIST_R2_OSPF](screenshots/ospf/RUNNING_CONFIG_DIST_R2_OSPF.png)
+ ![RUNNING_CONFIG_DIST_R2_OSPF](ospf/RUNNING_CONFIG_DIST_R2_OSPF.png)
 
- ![RUNNING_CONFIG_DIST_R3_OSPF](screenshots/ospf/RUNNING_CONFIG_DIST_R3_OSPF.png)
+ ![RUNNING_CONFIG_DIST_R3_OSPF](ospf/RUNNING_CONFIG_DIST_R3_OSPF.png)
 
 
-**🔍 Verification Commands**
+🔍 **Verification Commands**
 
 VLANs - show vlan brief
 
@@ -201,7 +201,7 @@ Virtual IP remains unchanged
 
 No manual intervention required
 
- ![OSPF_Reconvergence_and_Link_Failure_Simulation](screenshots/ospf/OSPF_Reconvergence_and_Link_Failure_Simulation.png)
+ ![OSPF_Reconvergence_and_Link_Failure_Simulation](ospf/OSPF_Reconvergence_and_Link_Failure_Simulation.png)
 
  A failover test was performed by shutting down the VLAN interface on Dist-R2. OSPF adjacency reconverged automatically, demonstrating network resiliency and dynamic routing recovery.
 
@@ -214,18 +214,27 @@ Alternate paths automatically used
 
 Network remains fully operational
 
- ![OSPF_Link_Recovery_and_Reconvergence](screenshots/ospf/OSPF_Link_Recovery_and_Reconvergence.png)
+ ![OSPF_Link_Recovery_and_Reconvergence](ospf/OSPF_Link_Recovery_and_Reconvergence.png)
 
 The OSPF network dynamically adapted to a simulated link failure on GigabitEthernet0/1. After the interface was restored, OSPF automatically reconverged and reinstated all routing paths without manual intervention, demonstrating high availability and network resilience.
 
 ✔ **HSRP Active/Standby Gateway Redundancy**
 
- ![HSRP_FAILOVER_DIST_R2](screenshots/hsrp/HSRP_FAILOVER_DIST_R2.png)
+ ![HSRP_FAILOVER_DIST_R2](hsrp/HSRP_FAILOVER_DIST_R2.png)
 
-  ![HSRP_FAILOVER_DIST_R3](screenshots/hsrp/HSRP_FAILOVER_DIST_R3.png)
+  ![HSRP_FAILOVER_DIST_R3](hsrp/HSRP_FAILOVER_DIST_R3.png)
 
 
 HSRP maintained gateway availability using virtual IP addresses. Active and standby roles were distributed across routers to ensure continuous network access during failures.
+
+🔁 **Network Connectivity**
+
+Command used: ping 192.168.x.x
+
+  ![PING1](hsrp/PING1.png)
+  
+  ![PING2](hsrp/PING2.png)
+
 
 🧠 **Skills Demonstrated**
 
