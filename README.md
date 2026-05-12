@@ -1,18 +1,18 @@
-🌐 **Enterprise Campus Network Topology (Cisco Packet Tracer)**
+**Enterprise Campus Network Topology (Cisco Packet Tracer)**
 
-📌 **Project Overview**
+**Project Overview**
 
 This project is a fully designed enterprise-grade campus network topology built using Cisco Packet Tracer. It demonstrates core networking concepts such as VLAN segmentation, inter-VLAN routing, HSRP redundancy, and dynamic routing using OSPF.
 
 The design focuses on high availability, fault tolerance, scalability, and redundancy, simulating a real-world enterprise environment.
 
-🧱 **Network Architecture**
+**Network Architecture**
 
 The network is designed using a three-router core layer with multiple VLAN-enabled access networks.
 
 ![TOPOLOGY](topology/TOPOLOGY.png)
 
-🔹 **Core Devices**
+**Core Devices**
 
 **Routers:**
 
@@ -40,7 +40,7 @@ SW-ACCOUNTING
 
 SW-FINANCE
 
-🏢 **VLAN Design**
+**VLAN Design**
 
 Department	VLAN ID	Network Address
 
@@ -73,7 +73,7 @@ FINANCE	VLAN 60	192.168.60.0/24
 ![VLAN60_SW_FINANCE](vlan/VLAN60_SW_FINANCE.png)
 
 
-🔁 **IP Addressing (Router Links)**
+**IP Addressing (Router Links)**
 
 Connection	Network
 
@@ -90,7 +90,7 @@ R1 ↔ R3	10.10.20.0/24
 ![IP_INT_BR_DIST_R3](topology/IP_INT_BR_DIST_R3.png)
 
 
-⚙️ **Key Technologies Implemented**
+**Key Technologies Implemented**
 
 VLAN Segmentation
 
@@ -106,7 +106,7 @@ Redundant Gateway Design
 
 Link Failure Simulation & Recovery
 
-🔁 **HSRP Configuration Summary**
+**HSRP Configuration Summary**
 
 HSRP is configured to provide default gateway redundancy across VLANs.
 
@@ -132,7 +132,7 @@ Active gateways are distributed between Dist-R2 and Dist-R3.
 
 ![HSRP](hsrp/STANDBY_BRIEF_DIST_R3.png)
 
-📡 **OSPF Routing**
+**OSPF Routing**
 
 Protocol: OSPF
 
@@ -150,7 +150,7 @@ Fast convergence after link failure
 
 Multiple path redundancy
 
-🔧 **Key Configurations**
+**Key Configurations**
 
 **Router-on-a-Stick Example**
 
@@ -191,7 +191,7 @@ router ospf 1
 
 
 
-🔍 **Verification Commands**
+**Verification Commands**
 
 VLANs - show vlan brief
 
@@ -203,9 +203,9 @@ OSPF Neighbors - show ip ospf neighbor
 
 HSRP Status - show standby brief
 
-🔁 **Failover Testing Results**
+**Failover Testing Results**
 
-✔ **OSPF Reconvergence and Link Failure Simulation**
+**OSPF Reconvergence and Link Failure Simulation**
 
 Active router automatically changes on failure
 
@@ -218,7 +218,7 @@ No manual intervention required
  A failover test was performed by shutting down the VLAN interface on Dist-R2. OSPF adjacency reconverged automatically, demonstrating network resiliency and dynamic routing recovery.
 
 
-✔ **OSPF Link Recovery and Reconvergence**
+**OSPF Link Recovery and Reconvergence**
 
 Link failure triggers route recalculation
 
@@ -230,7 +230,7 @@ Network remains fully operational
 
 The OSPF network dynamically adapted to a simulated link failure on GigabitEthernet0/1. After the interface was restored, OSPF automatically reconverged and reinstated all routing paths without manual intervention, demonstrating high availability and network resilience.
 
-✔ **HSRP Active/Standby Gateway Redundancy**
+**HSRP Active/Standby Gateway Redundancy**
 
  ![HSRP_FAILOVER_DIST_R2](hsrp/HSRP_FAILOVER_DIST_R2.png)
 
@@ -239,7 +239,7 @@ The OSPF network dynamically adapted to a simulated link failure on GigabitEther
 
 HSRP maintained gateway availability using virtual IP addresses. Active and standby roles were distributed across routers to ensure continuous network access during failures.
 
-🔁 **Network Connectivity**
+**Network Connectivity**
 
 Command used: ping 192.168.x.x
 
@@ -248,7 +248,7 @@ Command used: ping 192.168.x.x
   ![PING2](ping/PING2.png)
 
 
-🧠 **Skills Demonstrated**
+**Skills Demonstrated**
 
 Enterprise Network Design
 
@@ -266,21 +266,21 @@ Network Troubleshooting
 
 Failover Simulation
 
-🚀 **Key Highlights**
+**Key Highlights**
 
-✔ Fully redundant network design
+ Fully redundant network design
 
-✔ High availability using HSRP
+ High availability using HSRP
 
-✔ Dynamic routing with OSPF
+ Dynamic routing with OSPF
 
-✔ Real-world enterprise architecture
+ Real-world enterprise architecture
 
-✔ Load-balanced gateway design
+ Load-balanced gateway design
 
-✔ Automatic failover and recovery
+ Automatic failover and recovery
 
-📈 **Future Improvements**
+**Future Improvements**
 
 DHCP Server Integration
 
@@ -296,10 +296,10 @@ Syslog Monitoring Server
 
 NAT/PAT Internet Simulation
 
-👨‍💻 **Author**
+**Author**
 
 Ravi Kumar
 
-🏁 **Conclusion**
+**Conclusion**
 
 This project demonstrates a production-style enterprise campus network with redundancy, dynamic routing, and scalable VLAN architecture. It simulates real-world networking behavior used in modern organizations.
