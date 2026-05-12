@@ -83,6 +83,8 @@ R2 ↔ R3	10.10.30.0/24
 
 R1 ↔ R3	10.10.20.0/24
 
+![IP_INT_BR_CORE_R1](topology/IP_INT_BR_CORE_R1.png)
+
 ![IP_INT_BR_DIST_R2](topology/IP_INT_BR_DIST_R2.png)
 
 ![IP_INT_BR_DIST_R3](topology/IP_INT_BR_DIST_R3.png)
